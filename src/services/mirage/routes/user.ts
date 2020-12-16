@@ -39,6 +39,7 @@ const signup = (schema: any, req: Request): AuthResponse | Response => {
     token,
   };
 };
+
 // eslint-disable-next-line
 export default {
   login,
