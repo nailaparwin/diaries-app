@@ -1,5 +1,6 @@
 import { Server, Model, Factory, belongsTo, hasMany, Response } from 'miragejs';
-import user from './routes/user';
+//import user from './routes/user';
+import { login, signup } from "./routes/user";
 import * as diary from './routes/diary';
 
 
@@ -42,14 +43,14 @@ export const setupServer = (env?: string): Server => {
     },
 
     routes(): void {
-      //this.urlPrefix = 'https://diaries.app';
+      this.urlPrefix = 'https://diaries.app';
       //this.urlPrefix = 'https://diaries-app-ts-public.netlify.app';
       
       this.get('/diaries/entries/:id', diary.getEntries);
       this.get('/diaries/:id', diary.getDiaries);
 
-      this.post('/auth/login', user.login);
-      this.post('/auth/signup', user.signup);
+      this.post('/auth/login', login);
+      this.post('/auth/signup', signup);
 
       this.post('/diaries/', diary.create);
       this.post('/diaries/entry/:id', diary.addEntry);
