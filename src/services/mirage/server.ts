@@ -44,7 +44,7 @@ export const setupServer = (env?: string): Server => {
 
     routes(): void {
       //this.urlPrefix = 'https://diaries.app';
-      this.urlPrefix = 'https://diaries-app-ts-public2.netlify.app';
+      //this.urlPrefix = 'https://diaries-app-ts-public2.netlify.app';
       
 
       this.get('/diaries/entries/:id', diary.getEntries);
