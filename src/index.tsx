@@ -11,9 +11,9 @@ import store from './store';
 
 
 
-if (process.env.NODE_ENV === 'development') {
+//if (process.env.NODE_ENV === 'development') {
   setupServer();
-}
+//}
 
 ReactDOM.render(
   <React.StrictMode>

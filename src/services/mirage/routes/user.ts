@@ -10,7 +10,7 @@ export interface AuthResponse {
   user: User;
 }
 
-export const login = (schema: any, req: Request): AuthResponse | Response => {
+const login = (schema: any, req: Request): AuthResponse | Response => {
   const { username, password } = JSON.parse(req.requestBody);
   const user = schema.users.findBy({ username });
   if (!user) {
@@ -26,7 +26,7 @@ export const login = (schema: any, req: Request): AuthResponse | Response => {
   };
 };
 
-export const signup = (schema: any, req: Request): AuthResponse | Response => {
+const signup = (schema: any, req: Request): AuthResponse | Response => {
   const data = JSON.parse(req.requestBody);
   const exUser = schema.users.findBy({ username: data.username });
   if (exUser) {
@@ -39,8 +39,8 @@ export const signup = (schema: any, req: Request): AuthResponse | Response => {
     token,
   };
 };
-// eslint-disable-next-line
-// export default {
-//   login,
-//   signup,
-// };
+
+export default {
+  login,
+  signup,
+};
