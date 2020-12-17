@@ -1,6 +1,6 @@
 import { Server, Model, Factory, belongsTo, hasMany, Response } from 'miragejs';
-import user from './routes/user';
-//import * as user from './routes/user'
+//import user from './routes/user';
+import * as user from './routes/user'
 import * as diary from './routes/diary';
 
 
